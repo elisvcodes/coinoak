@@ -1,0 +1,61 @@
+const mongoose = require('mongoose');
+const coinSchema = new mongoose.Schema(
+  {
+    id: { type: String, unique: true },
+    name: String,
+    symbol: String,
+    platforms: {},
+    categories: [],
+    coinDescription: String,
+    block_time_in_minutes: String,
+    links: {
+      homepage: [],
+      blockchain_site: [],
+      official_forum_url: [],
+      twitter_screen_name: String,
+      facebook_username: String,
+      telegram_channel_identifier: String,
+    },
+    image: String,
+    market_data: {
+      current_price: Number,
+      ath: Number,
+      ath_change_percentage: Number,
+      atl: Number,
+      atl_change_percentage: Number,
+      market_cap: Number,
+      fully_diluted_valuation: Number,
+      high_24h: Number,
+      low_24h: Number,
+      price_change_24h_in_currency: Number,
+      price_change_percentage_24h_in_currency: Number,
+      price_change_percentage_1h_in_currency: Number,
+      price_change_percentage_7d_in_currency: Number,
+      price_change_percentage_14d_in_currency: Number,
+      price_change_percentage_30d_in_currency: Number,
+      price_change_percentage_60d_in_currency: Number,
+      price_change_percentage_200d_in_currency: Number,
+      price_change_percentage_1y_in_currency: Number,
+      market_cap_change_24h_in_currency: Number,
+      market_cap_change_percentage_24h_in_currency: Number,
+      price_change_24h: Number,
+      price_change_percentage_24h: Number,
+      price_change_percentage_7d: Number,
+      price_change_percentage_14d: Number,
+      price_change_percentage_30d: Number,
+      price_change_percentage_60d: Number,
+      price_change_percentage_200d: Number,
+      price_change_percentage_1y: Number,
+      market_cap_change_24h: Number,
+      market_cap_change_percentage_24h: Number,
+    },
+    total_supply: Number,
+    max_supply: Number,
+    circulating_supply: Number,
+  },
+  { timestamps: true }
+);
+
+const CoinData = mongoose.model('CoinData', coinSchema);
+
+module.exports = CoinData;
