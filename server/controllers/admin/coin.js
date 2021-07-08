@@ -31,8 +31,6 @@ const downloadImage = async (fileUrl) => {
 };
 
 exports.adminAddsCoin = async (req, res) => {
-  //   const allCoinsData = await CoinGeckoClient.coins.list();
-  //   res.json(allCoinsData);
   try {
     const coinDetails = await CoinGeckoClient.coins.fetch(req.params.id, {});
     const data = {
