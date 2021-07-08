@@ -1,4 +1,4 @@
-const CoinData = require('../models/coin');
+const CoinData = require('../../models/coin');
 const CoinGecko = require('coingecko-api');
 const CoinGeckoClient = new CoinGecko();
 const fs = require('fs');
