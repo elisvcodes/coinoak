@@ -115,8 +115,8 @@ exports.adminAddsCoin = async (req, res) => {
           coinDetails.data.market_data.market_cap_change_percentage_24h.usd,
       },
       total_supply: coinDetails.data.total_supply,
-      max_supply: coinDetails.data.max_supply,
-      circulating_supply: coinDetails.data.circulating_supply,
+      max_supply: coinDetails.data.market_data.max_supply,
+      circulating_supply: coinDetails.data.market_data.circulating_supply,
 
       community_data: {
         facebook_likes: coinDetails.data.community_data.facebook_likes,
